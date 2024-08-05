@@ -29,7 +29,7 @@ public class LocalJwtAuthenticationFilter implements GlobalFilter {
         if(path.equals("/auth/signIn")) {
             return chain.filter(exchange);
         }
-        
+
         String token = extractToken(exchange);
 
         if(token == null || !validateToken(token)) {
