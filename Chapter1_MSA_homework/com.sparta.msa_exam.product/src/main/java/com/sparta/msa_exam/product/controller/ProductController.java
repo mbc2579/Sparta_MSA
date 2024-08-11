@@ -3,6 +3,7 @@ package com.sparta.msa_exam.product.controller;
 import com.sparta.msa_exam.product.dto.ProductRequestDto;
 import com.sparta.msa_exam.product.dto.ProductResponseDto;
 import com.sparta.msa_exam.product.service.ProductService;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +28,10 @@ public class ProductController {
 
     @GetMapping
     @ResponseBody
-    public ResponseEntity<List<ProductResponseDto>> getProduct() {
+    public ResponseEntity<List<ProductResponseDto>> getProduct(HttpServletResponse response) {
+        response.setHeader("Server-port", String.valueOf(serverPort));
         List<ProductResponseDto> responseDto = productService.getProduct();
+
         return ResponseEntity.ok().body(responseDto);
     }
 
