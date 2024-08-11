@@ -17,8 +17,8 @@ public class ProductController {
 
    private final ProductService productService;
 
-   @Value("${Server-Port")
-   private String serverPort;
+   @Value("${server.port}")
+   private Long serverPort;
 
     @PostMapping
     public ProductResponseDto createProduct(@RequestBody ProductRequestDto requestDto) {
