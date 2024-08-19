@@ -39,7 +39,7 @@ public class OrderEndpoint {
         }
 
         public DeliveryMessage toDeliveryMessage(UUID orderId) {
-            return DeliveryMessage.builder().orderId(orderId).productId(productId).productQuantity(productQuantity).payAmount(payAmount).build();
+            return DeliveryMessage.builder().orderId(orderId).userId(userId).productId(productId).productQuantity(productQuantity).payAmount(payAmount).build();
         }
     }
 }
