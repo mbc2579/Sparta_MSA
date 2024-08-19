@@ -14,7 +14,7 @@ public class ProductEndpoint {
 
     @RabbitListener(queues = "${message.queue.product}")
     public void receiveMessage(DeliveryMessage deliveryMessage) {
-        log.info("PRODUCT RECEIVED: {}", deliveryMessage.toString());
+        log.info("PRODUCT RECEIVE: {}", deliveryMessage.toString());
         productService.reduceProductAmount(deliveryMessage);
     }
 
