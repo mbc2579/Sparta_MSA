@@ -1,5 +1,6 @@
 package com.market.order;
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ public class OrderEndpoint {
         return ResponseEntity.ok(order);
     }
 
+    @Data
     public static class OrderRequestDto {
         private String userId;
         private Integer productId;
