@@ -19,7 +19,7 @@ public class PaymentService {
     private String productErrorQueue;
 
     public void creatPayment(DeliveryMessage deliveryMessage) {
-        Payment payment = Payment.builder().paymentId(UUID.randomUUID()).payAmount(deliveryMessage.getPayAmount()).userId(deliveryMessage.getUserId()).payStatus("SUCCESS").build();
+        Payment payment = Payment.builder().paymentId(UUID.randomUUID()).userId(deliveryMessage.getUserId()).payAmount(deliveryMessage.getPayAmount()).payStatus("SUCCESS").build();
 
         Integer payAmount = deliveryMessage.getPayAmount();
 
