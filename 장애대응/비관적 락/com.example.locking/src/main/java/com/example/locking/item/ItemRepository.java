@@ -9,5 +9,5 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select i from Item i where i.id = :id")
-    Item findByWithLock(Long id);
+    Item findByIdWithLock(Long id);
 }
